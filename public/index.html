@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do por segmentos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Segmentos</h1>
+      <ul id="segment-list" class="segment-list"></ul>
+      <form id="segment-form" class="segment-form">
+        <input type="text" id="segment-name" placeholder="Novo segmento (ex: Séries)" required />
+        <button type="submit">+</button>
+      </form>
+    </aside>
+
+    <main class="content">
+      <div id="empty-state" class="empty-state">
+        <p>Selecione um segmento ao lado para ver os itens.</p>
+      </div>
+
+      <div id="segment-view" class="segment-view hidden">
+        <header class="segment-header">
+          <h2 id="segment-title"></h2>
+          <button id="delete-segment" class="link-danger">Excluir segmento</button>
+        </header>
+
+        <form id="item-form" class="item-form">
+          <input type="text" id="item-title" placeholder="Adicionar item..." required />
+          <button type="submit">Adicionar</button>
+        </form>
+
+        <div class="board">
+          <section class="board-column" data-status="novo">
+            <h3>Novo <span class="col-count" id="count-novo">0</span></h3>
+            <ul class="item-list" id="list-novo"></ul>
+          </section>
+          <section class="board-column" data-status="iniciado">
+            <h3>Iniciado <span class="col-count" id="count-iniciado">0</span></h3>
+            <ul class="item-list" id="list-iniciado"></ul>
+          </section>
+          <section class="board-column" data-status="concluido">
+            <h3>Concluído <span class="col-count" id="count-concluido">0</span></h3>
+            <ul class="item-list" id="list-concluido"></ul>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
